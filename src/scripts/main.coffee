@@ -358,7 +358,7 @@ class Formbuilder
   @helpers:
     defaultFieldAttrs: (field_type) ->
       attrs = {}
-      attrs[Formbuilder.options.mappings.LABEL] = 'Untitled'
+      attrs[Formbuilder.options.mappings.LABEL] = 'Email ipsum dolor sit amet..'
       attrs[Formbuilder.options.mappings.FIELD_TYPE] = field_type
       attrs[Formbuilder.options.mappings.REQUIRED] = true
       attrs['field_options'] = {}
@@ -394,7 +394,7 @@ class Formbuilder
 
     dict:
       ALL_CHANGES_SAVED: 'All changes saved'
-      SAVE_FORM: 'Save form'
+      SAVE_FORM: 'Save email'
       UNSAVED_CHANGES: 'You have unsaved changes. If you leave this page, you will lose those changes!'
 
   @fields: {}
