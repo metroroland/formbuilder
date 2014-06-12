@@ -1,14 +1,16 @@
-Formbuilder.registerField 'date',
+Formbuilder.registerField 'image',
 
   order: 20
 
   view: """
-   
-    <img src='http://www.gettyimages.com/CMS/Pages/ImageCollection/StaticContent/image1_%20164248809.jpg'></img>
+   <div style="text-align: center;">
+    <img  class="img-responsive" style="display: initial;"  src='http://thevectorlab.net/flatlab/img/email-img/main-img.png'></img>
+   </div>
     
+     
   """
 
-  edit: " <img src='gogle.com'></img> "
+  edit: " "
 
   addButton: """
     <span class="symbol"><span class="fa fa-picture-o"></span></span> Image

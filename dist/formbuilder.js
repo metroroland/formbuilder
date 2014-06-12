@@ -677,27 +677,32 @@
 }).call(this);
 
 (function() {
-  Formbuilder.registerField('date', {
+  Formbuilder.registerField('image', {
     order: 20,
-    view: "\n <img src='http://www.gettyimages.com/CMS/Pages/ImageCollection/StaticContent/image1_%20164248809.jpg'></img>\n ",
-    edit: " <img src='gogle.com'></img> ",
+    view: "<div style=\"text-align: center;\">\n <img  class=\"img-responsive\" style=\"display: initial;\"  src='http://thevectorlab.net/flatlab/img/email-img/main-img.png'></img>\n</div>\n \n  ",
+    edit: " ",
     addButton: "<span class=\"symbol\"><span class=\"fa fa-picture-o\"></span></span> Image"
   });
 
 }).call(this);
 
 (function() {
-  Formbuilder.registerField('dropdown', {
+  Formbuilder.registerField('social', {
     order: 24,
-    view: "<select>\n  <% if (rf.get(Formbuilder.options.mappings.INCLUDE_BLANK)) { %>\n    <option value=''></option>\n  <% } %>\n\n  <% for (i in (rf.get(Formbuilder.options.mappings.OPTIONS) || [])) { %>\n    <option <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].checked && 'selected' %>>\n      <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].label %>\n    </option>\n  <% } %>\n</select>",
-    edit: "<%= Formbuilder.templates['edit/options']({ includeBlank: true }) %>",
-    addButton: "<span class=\"symbol\"><span class=\"fa fa-caret-down\"></span></span> Dropdown",
+    view: "<ul>\n<% for (i in (rf.get(Formbuilder.options.mappings.OPTIONS) || [])) { %>\n  <li  <% if (rf.get(Formbuilder.options.mappings.OPTIONS)[i].label == \"\") { %> style=\"display:none\"  <% } %>   >\n    <a href=\" <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].label %>\" ><span class='fa fa-facebook-square'></span></a>\n  </li>\n<% } %>\n</ul>\n\n  <% for (i in (rf.get(Formbuilder.options.mappings.OPTIONS) || [])) { %>\n    <option <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].checked && 'selected' %>>\n      <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].label %>\n    </option>\n  <% } %>",
+    edit: "<%= Formbuilder.templates['edit/social_options']({ includeBlank: true }) %>",
+    addButton: "<span class=\"symbol\"><span class=\"fa fa-cubes\"></span></span> Social",
     defaultAttributes: function(attrs) {
       attrs.field_options.options = [
         {
           label: "",
           checked: false
         }, {
+          label: ""
+        }, {
+          checked: false,
+          label: "",
+          checked: false,
           label: "",
           checked: false
         }
@@ -986,6 +991,23 @@ with (obj) {
 __p += '<div class=\'fb-edit-section-header\'>Size</div>\n<select data-rv-value="model.' +
 ((__t = ( Formbuilder.options.mappings.SIZE )) == null ? '' : __t) +
 '">\n  <option value="small">Small</option>\n  <option value="medium">Medium</option>\n  <option value="large">Large</option>\n</select>\n';
+
+}
+return __p
+};
+
+this["Formbuilder"]["templates"]["edit/social_options"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+with (obj) {
+__p += '<div class="social-editing">\n\t\n\t<div class=\'fb-edit-section-header\'>Social Networks</div>\n\t\n\t';
+ if (typeof includeBlank !== 'undefined'){ ;
+__p += '\n\t  <label>\n\t    &nbsp;\n\t  </label>\n\t';
+ } ;
+__p += '\n\t\n\t<div class=\'option social\' data-rv-each-option=\'model.' +
+((__t = ( Formbuilder.options.mappings.OPTIONS )) == null ? '' : __t) +
+'\'>\n\t  <span class=\'fa fa-facebook-square fa-lg\'></span>\n\t  <input type="text" data-rv-input="option:label" class=\'option-label-input\' />\n\t</div>\n\t\n\t\n\t<div class=\'fb-bottom-add\'>\n\t</div>\n</div>\n';
 
 }
 return __p
