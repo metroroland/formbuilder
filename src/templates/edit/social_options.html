@@ -1,0 +1,19 @@
+<div class="social-editing">
+	
+	<div class='fb-edit-section-header'>Social Networks</div>
+	
+	<% if (typeof includeBlank !== 'undefined'){ %>
+	  <label>
+	    &nbsp;
+	  </label>
+	<% } %>
+	
+	<div class='option social' data-rv-each-option='model.<%= Formbuilder.options.mappings.OPTIONS %>'>
+	  <span class='fa fa-facebook-square fa-lg'></span>
+	  <input type="text" data-rv-input="option:label" class='option-label-input' />
+	</div>
+	
+	
+	<div class='fb-bottom-add'>
+	</div>
+</div>

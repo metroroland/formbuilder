@@ -1,22 +1,23 @@
-Formbuilder.registerField 'checkboxes',
+Formbuilder.registerField 'list',
 
   order: 10
 
   view: """
+  <ul>
     <% for (i in (rf.get(Formbuilder.options.mappings.OPTIONS) || [])) { %>
-      <div>
-        <label class='fb-option'>
-          <input type='checkbox' <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].checked && 'checked' %> onclick="javascript: return false;" />
+      <li>
+        <label class='fb-option'> 
+
           <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].label %>
         </label>
-      </div>
+      </li>
     <% } %>
-
+</ul>
     <% if (rf.get(Formbuilder.options.mappings.INCLUDE_OTHER)) { %>
       <div class='other-option'>
         <label class='fb-option'>
-          <input type='checkbox' />
-          Other
+
+          Other  
         </label>
 
         <input type='text' />
@@ -29,7 +30,7 @@ Formbuilder.registerField 'checkboxes',
   """
 
   addButton: """
-    <span class="symbol"><span class="fa fa-square-o"></span></span> Checkboxes
+    <span class="symbol"><span class="fa fa-list-ul"></span></span> List
   """
 
   defaultAttributes: (attrs) ->

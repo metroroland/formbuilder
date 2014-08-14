@@ -1,32 +1,17 @@
-Formbuilder.registerField 'date',
+Formbuilder.registerField 'image',
 
   order: 20
 
   view: """
-    <div class='input-line'>
-      <span class='month'>
-        <input type="text" />
-        <label>MM</label>
-      </span>
-
-      <span class='above-line'>/</span>
-
-      <span class='day'>
-        <input type="text" />
-        <label>DD</label>
-      </span>
-
-      <span class='above-line'>/</span>
-
-      <span class='year'>
-        <input type="text" />
-        <label>YYYY</label>
-      </span>
-    </div>
+   <div style="text-align: center;">
+    <img  class="img-responsive" style="display: initial;"  src='http://thevectorlab.net/flatlab/img/email-img/main-img.png'></img>
+   </div>
+    
+     
   """
 
-  edit: ""
+  edit: " "
 
   addButton: """
-    <span class="symbol"><span class="fa fa-calendar"></span></span> Date
+    <span class="symbol"><span class="fa fa-picture-o"></span></span> Image
   """

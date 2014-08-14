@@ -1,21 +1,24 @@
-Formbuilder.registerField 'radio',
+Formbuilder.registerField 'ordered list',
 
   order: 15
 
   view: """
+    <ol>
+  
     <% for (i in (rf.get(Formbuilder.options.mappings.OPTIONS) || [])) { %>
-      <div>
+      <li>
         <label class='fb-option'>
-          <input type='radio' <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].checked && 'checked' %> onclick="javascript: return false;" />
           <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].label %>
         </label>
-      </div>
+      </li> 
     <% } %>
+   
+   </ol>
 
     <% if (rf.get(Formbuilder.options.mappings.INCLUDE_OTHER)) { %>
       <div class='other-option'>
         <label class='fb-option'>
-          <input type='radio' />
+          
           Other
         </label>
 
@@ -29,7 +32,7 @@ Formbuilder.registerField 'radio',
   """
 
   addButton: """
-    <span class="symbol"><span class="fa fa-circle-o"></span></span> Multiple Choice
+    <span class="symbol"><span class="fa fa-list-ol"></span></span> Ordered list
   """
 
   defaultAttributes: (attrs) ->
