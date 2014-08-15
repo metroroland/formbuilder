@@ -165,7 +165,7 @@ class BuilderView extends Backbone.View
     unless !Formbuilder.options.AUTOSAVE
       setInterval =>
         @saveForm.call(@)
-      , 5000
+      , 2000
 
     $(window).bind 'beforeunload', =>
       if @formSaved then undefined else Formbuilder.options.dict.UNSAVED_CHANGES
@@ -386,11 +386,14 @@ class Formbuilder
       INCLUDE_OTHER: 'field_options.include_other_option'
       INCLUDE_BLANK: 'field_options.include_blank_option'
       INTEGER_ONLY: 'field_options.integer_only'
+      CREATE_CUSTOMER_RECORD: 'field_options.create_customer_record'
       MIN: 'field_options.min'
       MAX: 'field_options.max'
       MINLENGTH: 'field_options.minlength'
       MAXLENGTH: 'field_options.maxlength'
       LENGTH_UNITS: 'field_options.min_max_length_units'
+      PRETEXT: 'field_options.pre_text'
+      POSTTEXT: 'field_options.post_text'
 
     dict:
       ALL_CHANGES_SAVED: 'All changes saved'

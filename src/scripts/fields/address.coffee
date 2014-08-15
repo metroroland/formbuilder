@@ -1,6 +1,6 @@
 Formbuilder.registerField 'footer',
 
-  order: 50
+  order: 8
 
   view: """
     

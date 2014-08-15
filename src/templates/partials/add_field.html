@@ -1,14 +1,12 @@
 <div class='fb-tab-pane active' id='addField'>
   <div class='fb-add-field-types'>
+    <!-- span class='fb-section-heading'>Form Elements</span -->
     <div class='section'>
       <% _.each(_.sortBy(Formbuilder.inputFields, 'order'), function(f){ %>
         <a data-field-type="<%= f.field_type %>" class="<%= Formbuilder.options.BUTTON_CLASS %>">
           <%= f.addButton %>
         </a>
       <% }); %>
-    </div>
-
-    <!--div class='section'>
       <% _.each(_.sortBy(Formbuilder.nonInputFields, 'order'), function(f){ %>
         <a data-field-type="<%= f.field_type %>" class="<%= Formbuilder.options.BUTTON_CLASS %>">
           <%= f.addButton %>

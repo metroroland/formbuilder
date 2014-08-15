@@ -1,6 +1,6 @@
 Formbuilder.registerField 'social',
 
-  order: 24
+  order: 10
 
   view: """
     <ul>

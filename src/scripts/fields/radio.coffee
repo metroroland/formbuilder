@@ -1,6 +1,6 @@
 Formbuilder.registerField 'ordered list',
 
-  order: 15
+  order: 14
 
   view: """
     <ol>
@@ -32,7 +32,7 @@ Formbuilder.registerField 'ordered list',
   """
 
   addButton: """
-    <span class="symbol"><span class="fa fa-list-ol"></span></span> Ordered list
+    <span class="symbol"><span class="fa fa-circle-o"></span></span> Radio Buttons
   """
 
   defaultAttributes: (attrs) ->

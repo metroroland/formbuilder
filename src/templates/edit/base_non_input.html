@@ -1,2 +1,9 @@
 <%= Formbuilder.templates['edit/base_header']() %>
 <%= Formbuilder.fields[rf.get(Formbuilder.options.mappings.FIELD_TYPE)].edit({rf: rf}) %>
+<div class='fb-common-wrapper'>
+  <div class='fb-edit-section-header'>General Options</div>
+    <div class='fb-common-checkboxes'>
+      <%= Formbuilder.templates['edit/admin_only_checkbox']() %>
+    </div>
+  </div>
+</div>

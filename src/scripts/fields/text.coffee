@@ -10,7 +10,7 @@ Formbuilder.registerField 'header text',
   """
 
   addButton: """
-    <span class='symbol'><span class='fa fa-header'></span></span> Header text
+    <span class='symbol'><span class='fa fa-font'></span></span> Input Field
   """
 
   defaultAttributes: (attrs) ->
